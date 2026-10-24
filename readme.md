@@ -111,7 +111,7 @@ flowchart LR
 
 ```bash
 # Clone the repository
-git clone https://github.com/ARYX/aryx-m3u8-scraper.git
+git clone https://github.com/AryxK6/aryx-m3u8-scraper.git
 cd aryx-m3u8-scraper
 
 # Install dependencies
