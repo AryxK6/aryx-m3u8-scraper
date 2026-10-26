@@ -73,10 +73,7 @@ export const tmdbHeaders = {
  * @type {Array<{domain: string, name: string}>}
  */
 const PROVIDERS = [
-  { domain: "https://vidfast.vc", name: "VidFast" },
   { domain: "https://vidlink.pro", name: "VidLink" },
-  { domain: "https://vixsrc.to", name: "VixSrc" },
-  { domain: "https://cinesrc.st", name: "CineSrc" },
 ];
 
 /** @type {string[]} Allowed content types */
@@ -317,25 +314,10 @@ function normalizeSubUrl(url) {
  * @returns {string} Embed URL
  */
 function buildProviderUrl(domain, type, tmdbId, season, episode) {
-  if (domain.includes("vidfast.vc")) {
-    return type === "tv"
-      ? `${domain}/tv/${tmdbId}/${season}/${episode}?autoPlay=true`
-      : `${domain}/movie/${tmdbId}?autoPlay=true`;
-  }
   if (domain.includes("vidlink.pro")) {
     return type === "tv"
       ? `${domain}/tv/${tmdbId}/${season}/${episode}`
       : `${domain}/movie/${tmdbId}`;
-  }
-  if (domain.includes("vixsrc.to")) {
-    return type === "tv"
-      ? `${domain}/tv/${tmdbId}/${season}/${episode}`
-      : `${domain}/movie/${tmdbId}`;
-  }
-  if (domain.includes("cinesrc.st")) {
-    return type === "tv"
-      ? `${domain}/embed/tv/${tmdbId}?s=${season}&e=${episode}`
-      : `${domain}/embed/movie/${tmdbId}`;
   }
   return type === "tv"
     ? `${domain}/embed/tv?tmdb=${tmdbId}&season=${season}&episode=${episode}`
