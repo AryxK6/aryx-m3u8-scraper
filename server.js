@@ -73,7 +73,7 @@ export const tmdbHeaders = {
  * @type {Array<{domain: string, name: string}>}
  */
 const PROVIDERS = [
-  { domain: "https://moviesapi.to", name: "MoviesAPI" },
+  { domain: "https://yapgrid.com", name: "YapGrid" },
 ];
 
 /** @type {string[]} Allowed content types */
@@ -314,10 +314,10 @@ function normalizeSubUrl(url) {
  * @returns {string} Embed URL
  */
 function buildProviderUrl(domain, type, tmdbId, season, episode) {
-  if (domain.includes("moviesapi.to")) {
+  if (domain.includes("yapgrid.com")) {
     return type === "tv"
-      ? `${domain}/tv/${tmdbId}/${season}/${episode}`
-      : `${domain}/movie/${tmdbId}`;
+      ? `${domain}/embed/tv/${tmdbId}/${season}/${episode}`
+      : `${domain}/embed/movie/${tmdbId}`;
   }
   return type === "tv"
     ? `${domain}/embed/tv?tmdb=${tmdbId}&season=${season}&episode=${episode}`
