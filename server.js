@@ -73,7 +73,7 @@ export const tmdbHeaders = {
  * @type {Array<{domain: string, name: string}>}
  */
 const PROVIDERS = [
-  { domain: "https://vidlink.pro", name: "VidLink" },
+  { domain: "https://moviesapi.to", name: "MoviesAPI" },
 ];
 
 /** @type {string[]} Allowed content types */
@@ -314,7 +314,7 @@ function normalizeSubUrl(url) {
  * @returns {string} Embed URL
  */
 function buildProviderUrl(domain, type, tmdbId, season, episode) {
-  if (domain.includes("vidlink.pro")) {
+  if (domain.includes("moviesapi.to")) {
     return type === "tv"
       ? `${domain}/tv/${tmdbId}/${season}/${episode}`
       : `${domain}/movie/${tmdbId}`;
